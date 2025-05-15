@@ -53,7 +53,7 @@ export const validateEmployeeForm = (values) => {
   if (!values.image && !values.existingImage) {
     errors.image = 'Image is required';
   } else if (
-    values.image && 
+    values.image instanceof File  && 
     !validateImageFile(values.image)
   ) {
     errors.image = 'Only JPG/PNG files are allowed';
